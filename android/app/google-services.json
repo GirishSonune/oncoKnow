@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "67755387284",
+    "project_id": "oncoknow-sgairc",
+    "storage_bucket": "oncoknow-sgairc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67755387284:android:30ed027693727b5aea4781",
+        "android_client_info": {
+          "package_name": "com.example.oncoknow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALMI6-5iinJYLv8aegONlibG4zuEHSeYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
