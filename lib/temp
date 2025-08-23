@@ -1,0 +1,73 @@
+import 'package:dots_indicator/dots_indicator.dart'; // Import dots_indicator package
+
+class HomeScreen extends StatefulWidget { // Change to StatefulWidget
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final _controller = PageController(); // Initialize PageController
+  double _currentPage = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.addListener(() {
+      setState(() {
+        _currentPage = _controller.page!;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose(); // Dispose controller when widget is removed
+    super.dispose();
+  }@override
+  Widget build(BuildContext context) {
+    // ... (rest of your code)
+
+    return Scaffold(
+      // ...
+      body: ListView(
+        children: [
+          // ... (your horizontal ListView)
+
+          SizedBox(
+            height: 300, // Adjust height as needed
+            child: Stack(
+              children: [
+                PageView(
+                  controller: _controller, // Assign controller to PageView
+                  children: [
+                    // ... (your PageView children)
+                  ],
+                ),
+                Positioned(
+                  bottom: 16,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: DotsIndicator(
+                      dotsCount: 3, // Number of pages
+                      position: _currentPage,
+                      decorator: DotsDecorator(
+                        activeColor: Theme.of(context).colorScheme.primary,
+                        size: const Size.square(9.0),
+                        activeSize: const Size(18.0, 9.0),
+                        activeShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
