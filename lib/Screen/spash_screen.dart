@@ -69,16 +69,16 @@ class MySplashScreen extends StatelessWidget {
                         width: size.width,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: const Color(0xffEBEBF2).withOpacity(0.9),
+                          color: Color.fromRGBO(235, 235, 242, 0.9),
                           border: Border.all(
                             color: Colors.white,
                           ),
                           boxShadow: [
-                            BoxShadow(
-                              color: Colors.black12.withOpacity(0.05),
+                            const BoxShadow(
+                              color: Color.fromRGBO(0,0,0,0.05),
                               spreadRadius: 1,
                               blurRadius: 7,
-                              offset: const Offset(0, -1),
+                              offset: Offset(0, -1),
                             ),
                           ],
                         ),

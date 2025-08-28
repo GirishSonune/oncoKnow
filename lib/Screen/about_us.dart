@@ -12,10 +12,8 @@ class AboutUs extends StatelessWidget {
         title: Row(
           children: [
             Image.asset("lib/images/logo.png", fit: BoxFit.contain, height: 50),
-            SizedBox(
-              width: 25,
-            ),
-            Text(
+            const SizedBox(width: 25),
+            const Text(
               "About Us",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -39,8 +37,8 @@ class AboutUs extends StatelessWidget {
       drawer: const Drawer(),
       body: ListView(
         children: [
-          Container(
-            padding: EdgeInsets.all(25),
+          Padding(
+            padding: const EdgeInsets.all(25),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12.0),
               child: Image.asset(
@@ -49,16 +47,14 @@ class AboutUs extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 25,
-          ),
-          Center(
+          const SizedBox(height: 25),
+          const Center(
             child: Text(
               "Product Overviiew",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
           ),
-          Center(
+          const Center(
             child: Text(
               "Kind Heart Motive",
               style: TextStyle(
@@ -66,29 +62,23 @@ class AboutUs extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 15,
-          ),
-          Container(
+          const SizedBox(height: 15),
+          const Padding(
             padding: EdgeInsets.all(25),
             child: Text(
               "OnCoKnow is a state-of-the-art software designed to revolutionize cancer diagnostics, with a particular focus on the early detection of circulating tumor cells (CTCs). Our product is meticulously crafted to provide a user-friendly experience, making it accessible to individuals who seek proactive health management. Leveraging cutting-edge technology, [Software Name] utilizes advanced algorithms and image processing techniques to identify CTCs in the bloodstream with unparalleled precision.",
               style: TextStyle(fontSize: 18),
             ),
           ),
-          SizedBox(
-            height: 50,
-          ),
-          Center(
+          const SizedBox(height: 50),
+          const Center(
             child: Text(
               "Our Mission",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
           ),
-          SizedBox(
-            height: 15,
-          ),
-          Container(
+          const SizedBox(height: 15),
+          const Padding(
             padding: EdgeInsets.all(25),
             child: Text(
               "Empowering individuals through accessible and advanced cancer diagnostics for early detection, fostering proactive health management.",

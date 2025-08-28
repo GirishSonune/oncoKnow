@@ -34,29 +34,23 @@ class MyDrawer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               DrawerHeader(
-                child: Container(
-                  // width: double.infinity,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        onTap: () {},
-                        child: const CircleAvatar(
-                          radius: 55,
-                          backgroundImage: AssetImage(
-                            "lib/images/doctorGirl.png",
-                          ),
+                child: Column(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: const CircleAvatar(
+                        radius: 55,
+                        backgroundImage: AssetImage(
+                          "lib/images/doctorGirl.png",
                         ),
                       ),
-                      // SizedBox(
-                      //   height: 12,
-                      // ),
-                      const Text(
-                        "Hello, Girish",
-                        style: TextStyle(fontWeight: FontWeight.w400),
-                      ),
-                      // Text("girish.sonune"),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      "Hello, Girish",
+                      style: TextStyle(fontWeight: FontWeight.w400),
+                    ),
+                  ],
                 ),
               ),
             ],

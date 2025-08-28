@@ -57,7 +57,7 @@ class _SignInState extends State<SignIn> {
               GestureDetector(
                 onTap: () {
                   // Add navigation or functionality for password recovery
-                  print("Navigate to Recovery Password Screen");
+                  debugPrint("Navigate to Recovery Password Screen");
                 },
                 child: const Align(
                   alignment: Alignment.center,

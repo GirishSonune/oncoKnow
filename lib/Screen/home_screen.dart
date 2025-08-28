@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import '../components/my_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   // final User? user = Auth().currentUser;
 
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       // Navigator.pushReplacementNamed(context, '/login');
     } catch (e) {
       // Handle sign-out error
-      print('Error signing out: $e');
+      debugPrint('Error signing out: $e');
     }
   }
 

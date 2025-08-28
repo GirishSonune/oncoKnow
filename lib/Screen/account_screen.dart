@@ -26,10 +26,8 @@ class _AccountScreenState extends State<AccountScreen> {
         title: Row(
           children: [
             Image.asset("lib/images/logo.png", fit: BoxFit.contain, height: 50),
-            SizedBox(
-              width: 25,
-            ),
-            Text(
+            const SizedBox(width: 25),
+            const Text(
               "Settings",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -56,15 +54,15 @@ class _AccountScreenState extends State<AccountScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
-              const Text(
-                "Account",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(height: 20),
+                  const SizedBox(height: 40),
+                  const Text(
+                    "Account",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
                 child: Row(

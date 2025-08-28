@@ -24,7 +24,7 @@ class MyProductTile2 extends StatelessWidget {
         children: [
           Column(
             children: <Widget>[
-              Container(
+              SizedBox(
                 height: 320,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12.0),
@@ -35,26 +35,20 @@ class MyProductTile2 extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(
-                height: 25,
-              ),
+              const SizedBox(height: 25),
 
               // product name
               Text(
                 news.name,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
 
-              const SizedBox(
-                height: 25,
-              ),
+              const SizedBox(height: 25),
 
               // product description
               Text(
                 news.description,
-                style: TextStyle(
-                    color: Theme.of(context).colorScheme.inverseSurface),
+                style: TextStyle(color: Theme.of(context).colorScheme.inverseSurface),
               ),
             ],
           ),

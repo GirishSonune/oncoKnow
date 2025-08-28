@@ -95,7 +95,7 @@ class ContactUs extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    print("Tapped");
+                    debugPrint("Tapped");
                   },
                 ),
               ],
