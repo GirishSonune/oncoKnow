@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
+<<<<<<< HEAD
         android:label="oncoknow"
+=======
+        android:label="oncoknow_2"
+>>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

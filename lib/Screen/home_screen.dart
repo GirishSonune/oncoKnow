@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import 'package:firebase_auth/firebase_auth.dart';
+>>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:oncoknow/auth.dart';
@@ -10,7 +14,11 @@ import '../components/my_drawer.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
+<<<<<<< HEAD
   // final User? user = Auth().currentUser;
+=======
+  final User? user = Auth().currentUser;
+>>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
 
   Future<void> signOut() async {
     try {

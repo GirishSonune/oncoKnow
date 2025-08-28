@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'dart:async';
 
 // Lightweight, local replacement for Firebase-backed Auth used by the app.
@@ -43,5 +44,34 @@ class Auth {
 
   void dispose() {
     _authStateController.close();
+=======
+import 'package:firebase_auth/firebase_auth.dart';
+
+class Auth {
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  User? get currentUser => _firebaseAuth.currentUser;
+
+  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+
+  Future<void> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    await _firebaseAuth.signInWithEmailAndPassword(
+        email: email, password: password);
+  }
+
+  Future<void> createUserWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email, password: password);
+  }
+
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
+>>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
   }
 }
