@@ -3,11 +3,6 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-<<<<<<< HEAD
-=======
-  firebase_auth
-  firebase_core
->>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:oncoknow/Screen/home_screen.dart';
-=======
->>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -119,7 +116,6 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-<<<<<<< HEAD
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -127,10 +123,6 @@ class SignUp extends StatelessWidget {
                           ),
                         );
                       },
-=======
-                      print("Tapped");
-                    },
->>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
                   ),
                   SizedBox(height: size.height * 0.06),
                   Row(
@@ -160,18 +152,11 @@ class SignUp extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-<<<<<<< HEAD
                       socialIcon("images/google.png"),
                       socialIcon("images/apple.png"),
                       socialIcon("images/facebook.png"),
-=======
-                      socialIcon("assets/images/google.png"),
-                      socialIcon("assets/images/apple.png"),
-                      socialIcon("assets/images/facebook.png"),
->>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
                     ],
                   ),
-                  SizedBox(height: size.height * 0.1),
                 ],
               ),
             ),

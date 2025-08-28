@@ -1,77 +1,43 @@
-<<<<<<< HEAD
 import 'dart:async';
 
-// Lightweight, local replacement for Firebase-backed Auth used by the app.
-// Provides the same public API surface the project expects so other files
-// don't need changes when Firebase is removed.
-
-class User {
-  final String uid;
-  final String? email;
-  User({required this.uid, this.email});
+class UserModel {
+	final String uid;
+	final String? email;
+	UserModel({required this.uid, this.email});
 }
 
+/// Lightweight in-memory auth replacement for projects that don't use Firebase.
+/// Provides the minimal API used by the app: currentUser, authStateChanges,
+/// signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut.
 class Auth {
-  User? _currentUser;
-  final StreamController<User?> _authStateController =
-      StreamController<User?>.broadcast();
+	UserModel? _currentUser;
+	final _controller = StreamController<UserModel?>.broadcast();
 
-  User? get currentUser => _currentUser;
+	UserModel? get currentUser => _currentUser;
 
-  Stream<User?> get authStateChanges => _authStateController.stream;
+	Stream<UserModel?> get authStateChanges => _controller.stream;
 
-  Future<void> signInWithEmailAndPassword(
-      {required String email, required String password}) async {
-    // Simple in-memory sign-in. Replace with real auth later if needed.
-    _currentUser = User(uid: 'local_${email.hashCode}', email: email);
-    _authStateController.add(_currentUser);
-    return;
-  }
+	Future<void> signInWithEmailAndPassword({
+		required String email,
+		required String password,
+	}) async {
+		// Simple deterministic local sign-in for development.
+		_currentUser = UserModel(uid: 'local_${email.hashCode}', email: email);
+		_controller.add(_currentUser);
+	}
 
-  Future<void> createUserWithEmailAndPassword(
-      {required String email, required String password}) async {
-    // Simple in-memory account creation.
-    _currentUser = User(uid: 'local_${email.hashCode}', email: email);
-    _authStateController.add(_currentUser);
-    return;
-  }
+	Future<void> createUserWithEmailAndPassword({
+		required String email,
+		required String password,
+	}) async {
+		_currentUser = UserModel(uid: 'local_${email.hashCode}', email: email);
+		_controller.add(_currentUser);
+	}
 
-  Future<void> signOut() async {
-    _currentUser = null;
-    _authStateController.add(null);
-    return;
-  }
+	Future<void> signOut() async {
+		_currentUser = null;
+		_controller.add(null);
+	}
 
-  void dispose() {
-    _authStateController.close();
-=======
-import 'package:firebase_auth/firebase_auth.dart';
-
-class Auth {
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-
-  User? get currentUser => _firebaseAuth.currentUser;
-
-  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
-
-  Future<void> signInWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
-    await _firebaseAuth.signInWithEmailAndPassword(
-        email: email, password: password);
-  }
-
-  Future<void> createUserWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
-    await _firebaseAuth.createUserWithEmailAndPassword(
-        email: email, password: password);
-  }
-
-  Future<void> signOut() async {
-    await _firebaseAuth.signOut();
->>>>>>> 0d7df472edadaf38cd27f6c55368a5b786a717ff
-  }
+	void dispose() => _controller.close();
 }
